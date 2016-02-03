@@ -1,5 +1,5 @@
 ;##################################################################################
-;Lambda.ahk Version 1.3.2
+;Lambda.ahk Version 1.3.3
 ;Author: Jason Bishop
 ;Created with AutoHotKey_L http://www.autohotkey.com/
 ;##################################################################################
