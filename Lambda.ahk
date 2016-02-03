@@ -741,7 +741,7 @@ ExitApp
 ; -----------------------------------------------------
 #x::
 Sub_Updatecheck:
-;UrlDownloadToFile, "URL", Temp\Lambda.ahk
+UrlDownloadToFile, https://raw.githubusercontent.com/JasonElliottBishop/Lambda/master/Lambda.ahk, Temp\Lambda.ahk
 FileRead, Var_Vercheck, Temp\Lambda.ahk
 RegExMatch(Var_Vercheck, "\d+.\d+.\d+", Var_NewVer)
 If Var_NewVer > %Var_Version%
