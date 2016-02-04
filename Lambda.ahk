@@ -79,7 +79,7 @@ Gosub, Sub_Startup
 ; -----------------------------------------------------
 ; Includes
 ; -----------------------------------------------------
-#Include Include\Notify.ahk
+#Include Config\Notify.dll
 #Include Config\Hotkey.cfg
 #Include Config\AutoReplace.cfg
 
@@ -748,8 +748,9 @@ If Var_NewVer > %Var_Version%
 {
     FileMove, Temp\Lambda.ahk, Lambda.ahk, 1
     Notify("Lambda", "Updated to: " Var_NewVer,10,"TS=11 TM=8 TF=Ariel GC_=Gray BC_=Black BW_=5 BT_=175 SI_=500 Image=Icons\Lambda.ico")
-    Sleep, 4000
+    Sleep, 3000
     GoSub, Sub_Reload
+    Sleep, 3000
 }
 else
 {
