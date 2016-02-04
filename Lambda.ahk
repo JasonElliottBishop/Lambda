@@ -740,7 +740,6 @@ ExitApp
 ; -----------------------------------------------------
 ; Update Check
 ; -----------------------------------------------------
-#x::
 Sub_Updatecheck:
 UrlDownloadToFile, https://raw.githubusercontent.com/JasonElliottBishop/Lambda/master/Lambda.ahk, Temp\Lambda.ahk
 FileRead, Var_Vercheck, Temp\Lambda.ahk
