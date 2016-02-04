@@ -3,7 +3,7 @@
 ;Author: Jason Bishop
 ;Created with AutoHotKey_L http://www.autohotkey.com/
 ;##################################################################################
-Var_Version = 1.3.2
+Var_Version = 1.3.3
 ;##################################################################################
 ;                               __START AUTOEXEC SECTION__
 ;##################################################################################
@@ -568,6 +568,7 @@ IfNotExist, %Var_Settings%
     Reload
 }
 Gosub, Sub_AddtoStart
+GoSub, Sub_Updatecheck
 Gosub, Sub_BackupToggle
 Gosub, Sub_KeepAliveToggle
 Return
@@ -746,11 +747,14 @@ FileRead, Var_Vercheck, Temp\Lambda.ahk
 RegExMatch(Var_Vercheck, "\d+.\d+.\d+", Var_NewVer)
 If Var_NewVer > %Var_Version%
 {
-    Notify("Lambda", "Available Update " Var_NewVer,10,"TS=11 TM=8 TF=Ariel GC_=Gray BC_=Black BW_=5 BT_=175 SI_=500 Image=Icons\Lambda.ico")
+    FileMove, Temp\Lambda.ahk, Lambda.ahk, 1
+    Notify("Lambda", "Updated to: " Var_NewVer,10,"TS=11 TM=8 TF=Ariel GC_=Gray BC_=Black BW_=5 BT_=175 SI_=500 Image=Icons\Lambda.ico")
+    Sleep, 4000
+    GoSub, Sub_Reload
 }
 else
 {
-    MsgBox, You are currently using the most updated version!
+    FileDelete, Temp\Lambda.ahk
 }
 return
 
