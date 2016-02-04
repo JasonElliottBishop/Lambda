@@ -743,7 +743,8 @@ ExitApp
 Sub_Updatecheck:
 UrlDownloadToFile, https://raw.githubusercontent.com/JasonElliottBishop/Lambda/master/Lambda.ahk, Temp\Lambda.ahk
 FileRead, Var_Vercheck, Temp\Lambda.ahk
-RegExMatch(Var_Vercheck, "\d+.\d+.\d+", Var_NewVer)
+RegExMatch(Var_Vercheck, "Version ([\d\.]+)", Var_NVer)
+RegExMatch(Var_NVer, "([\d\.]+)", Var_NewVer)
 If Var_NewVer > %Var_Version%
 {
     FileMove, Temp\Lambda.ahk, Lambda.ahk, 1
